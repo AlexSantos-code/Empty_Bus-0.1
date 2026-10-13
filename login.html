@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - Painel de Ônibus</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="app-container auth-screen">
+        <header class="auth-header">
+            <div class="auth-logo"><i class="fa-solid fa-bus"></i></div>
+            <h1>Painel de Ônibus</h1>
+            <p>Acompanhe suas linhas em tempo real</p>
+        </header>
+
+        <div class="auth-card">
+            <div class="tabs" role="tablist">
+                <button type="button" class="tab active" role="tab" id="tab-login" aria-selected="true" aria-controls="form-login">Entrar</button>
+                <button type="button" class="tab" role="tab" id="tab-register" aria-selected="false" aria-controls="form-register">Cadastrar</button>
+            </div>
+
+            <p id="auth-message" class="auth-message" role="status" aria-live="polite" hidden></p>
+
+            <!-- LOGIN -->
+            <form id="form-login" class="auth-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+                <div class="field">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" autocomplete="email" placeholder="voce@email.com" required>
+                    <small class="error" data-error-for="email"></small>
+                </div>
+
+                <div class="field">
+                    <label for="login-password">Senha</label>
+                    <div class="password-wrap">
+                        <input type="password" id="login-password" name="password" autocomplete="current-password" placeholder="Sua senha" required>
+                        <button type="button" class="toggle-pass" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                    <small class="error" data-error-for="password"></small>
+                </div>
+
+                <label class="remember">
+                    <input type="checkbox" name="remember"> Manter conectado
+                </label>
+
+                <small class="error form-error" data-error-for="form"></small>
+                <button type="submit" class="submit-btn">Entrar</button>
+            </form>
+
+            <!-- CADASTRO -->
+            <form id="form-register" class="auth-form" role="tabpanel" aria-labelledby="tab-register" novalidate hidden>
+                <div class="field">
+                    <label for="reg-name">Nome</label>
+                    <input type="text" id="reg-name" name="name" autocomplete="name" placeholder="Seu nome" required>
+                    <small class="error" data-error-for="name"></small>
+                </div>
+
+                <div class="field">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" name="email" autocomplete="email" placeholder="voce@email.com" required>
+                    <small class="error" data-error-for="email"></small>
+                </div>
+
+                <div class="field">
+                    <label for="reg-password">Senha</label>
+                    <div class="password-wrap">
+                        <input type="password" id="reg-password" name="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres, letras e números" required>
+                        <button type="button" class="toggle-pass" aria-label="Mostrar senha"><i class="fa-regular fa-eye"></i></button>
+                    </div>
+                    <small class="error" data-error-for="password"></small>
+                </div>
+
+                <div class="field">
+                    <label for="reg-confirm">Confirmar senha</label>
+                    <input type="password" id="reg-confirm" name="confirm" autocomplete="new-password" placeholder="Repita a senha" required>
+                    <small class="error" data-error-for="confirm"></small>
+                </div>
+
+                <small class="error form-error" data-error-for="form"></small>
+                <button type="submit" class="submit-btn">Criar conta</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
